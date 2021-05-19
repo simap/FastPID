@@ -98,6 +98,14 @@ int16_t FastPID::step(int16_t sp, int16_t fb) {
     else if (_sum < INTEG_MIN)
       _sum = INTEG_MIN;
 
+
+    //given output limits, limit _sum to a value that would saturate
+    if (_sum > _outmax)
+      _sum = _outmax;
+
+    if (_sum < _outmin)
+      _sum = _outmin;
+
     // int32
     I = _sum;
   }

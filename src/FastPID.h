@@ -47,7 +47,7 @@ private:
   uint32_t floatToParam(float); 
   void setCfgErr(); 
 
-private:
+public:
 
   // Configuration
   uint32_t _p, _i, _d;
